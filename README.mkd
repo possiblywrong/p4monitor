@@ -1,0 +1,37 @@
+# p4monitor
+
+A quick hacky list & display for iterating through the past **N** changes.
+
+Inspiration and basic code structure copied from the **vim-pad** plugin
+
+ * Go check out the awesome [vim-pad](https://github.com/fmoralesc/vim-pad) plugin for more info.
+
+## Installation
+
+Usual rules apply here, use [pathogen](https://github.com/tpope/vim-pathogen) for installation.
+
+## .vimrc settings
+
+Not many options **yet** but here are all the options as things stand.
+
+    " p4monitor settings
+    " P4PORT setting
+    let g:p4mon_port = "somehost.com:1666"
+    " Optionally you can set the split window height, default 30
+    let g:p4mon_window_height = 50
+    " Optionally set the last N changes, default 50
+    let g:p4mon_num_changes = 100
+
+Note for the list buffer to behave in a styled way you'll need,
+
+    filetype on
+    filetype plugin indent on
+
+The default key-mappings are,
+
+    Global Mappings
+    <leader>p     ->  Toggles the change list buffer
+    List Buffer Mappings
+    <enter>       ->  Opens a full description of the current change under the cursor in a new buffer
+    Diff Buffer Mappings
+    <leader><esc> ->  Closes the current diff buffer
